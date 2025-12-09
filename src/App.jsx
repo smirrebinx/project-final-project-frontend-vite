@@ -39,20 +39,13 @@ const MainWithUserInfo = () => {
 }
 
 export const App = () => {
-  console.log('App component is rendering'); // Debugging log
   return (
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainWithUserInfo />} /> {/* Default route */}
-          <Route path="*" element={<NotFound />} />         {/* 404 route */}
+          <Route path="/*" element={<MainWithUserInfo />} /> {/* Default route */}
         </Routes>
       </BrowserRouter>
     </Provider>
   )
 }
-
-// export const App = () => {
-//     console.log('App component is rendering'); // Debugging log
-//     return <h1>App is rendering correctly!</h1>;
-// };
