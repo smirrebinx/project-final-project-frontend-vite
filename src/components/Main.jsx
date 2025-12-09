@@ -42,9 +42,6 @@ const Main = () => {
 
   return (
     <>
-      <div>
-      <h1>Welcome to the Main Page!</h1>  {/* Test rendering */}
-    </div>
       {/* Display user icon with click event to scroll to logout */}
       <button
         type="button"
