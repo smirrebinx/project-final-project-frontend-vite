@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Main from './components/Main'
+import NotFound from './components/NotFound'
 import { Provider, useSelector } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import thunkMiddleware from 'redux-thunk'
 import user from './reducers/user'
 import treatments from './reducers/treatments'
 
@@ -23,8 +23,7 @@ if (persistedStateJSON) {
 // Configure the Redux store
 const store = configureStore({
   reducer: rootReducer,
-  preloadedState: persistedState,
-  middleware: [thunkMiddleware]
+  preloadedState: persistedState
 })
 
 // Component that wraps the Main component and handles user access token changes
