@@ -4,11 +4,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: hidden; 
+  overflow: hidden;
   box-sizing: border-box;
   min-height: 100vh;
   position: relative;
-  margin-bottom: 2rem;
+  padding-bottom: 5rem;
 `
 
 export const ContentContainer = styled.div`
@@ -19,7 +19,7 @@ export const ContentContainer = styled.div`
 `
 
 export const FooterContainer = styled.div`
-  flex-shrink: 0; 
+  flex-shrink: 0;
   height: 2rem;
   width: 100%;
   background-color: var(--footer-background-color);
@@ -28,6 +28,8 @@ export const FooterContainer = styled.div`
   align-items: center;
   padding: 1rem;
   position: absolute;
+  bottom: 0;
+  left: 0;
 `
 
 export const StyledFooterHeaderTwo = styled.h3`

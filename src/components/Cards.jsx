@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import treatments, { setSelectedTreatment } from 'reducers/treatments'
 import classNames from 'classnames'
@@ -9,7 +9,8 @@ import {
   CardIconContainer,
   CardSelected,
   StyledParagraphBookingCards,
-  StyledSecondHeadingCards
+  StyledSecondHeadingCards,
+  ConfirmationWrapper
 } from './CardsStyling'
 import { API_URL } from '../utils/urls'
 import Loading from './Loading'
@@ -42,6 +43,7 @@ const getTreatmentIcon = (treatmentName) => {
 const Cards = () => {
   const [selectedTreatmentId, setSelectedTreatmentId] = useState(null)
   const { sticky, stickyRef } = useSticky()
+  const cardContainerRef = useRef(null)
   const dispatch = useDispatch()
   const allTreatments = useSelector((state) => state.treatments.items)
   const [isLoading, setIsLoading] = useState(true)
@@ -95,15 +97,13 @@ const Cards = () => {
       </StickyNavTwo>
       <div>
         {selectedTreatmentId && (
-          <OuterWrapper>
-            <InnerWrapper>
-              {/* Display confirmation message and button for selected treatment */}
-              <StyledParagraphBookingCards>Confirm your booking or choose another card</StyledParagraphBookingCards>
-              <CardSelected type="button">
-                <StyledLink to="/login">Confirm {selectedTreatmentId.name}</StyledLink>
-              </CardSelected>
-            </InnerWrapper>
-          </OuterWrapper>
+          <ConfirmationWrapper>
+            {/* Display confirmation message and button for selected treatment */}
+            <StyledParagraphBookingCards>Confirm your booking or choose another card</StyledParagraphBookingCards>
+            <CardSelected type="button">
+              <StyledLink to="/login">Confirm {selectedTreatmentId.name}</StyledLink>
+            </CardSelected>
+          </ConfirmationWrapper>
         )}
         {
         isLoading
@@ -119,7 +119,7 @@ const Cards = () => {
           : (
           <>
             {/* Display treatment cards */}
-            <CardContainer className={classNames({ 'menu-open': isMenuOpen })}>
+            <CardContainer ref={cardContainerRef} className={classNames({ 'menu-open': isMenuOpen })}>
               {allTreatments.map((treatment) => (
                 <Card
                   key={treatment._id}
