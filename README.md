@@ -2,10 +2,9 @@
 This full-stack booking application built with React and Redux enables users to schedule hairdresser appointments through a calendar feature. It ensures secure password storage, input validation, and error handling through an API connecting the frontend and backend.
 
 Design inspired by
-Indtendit Webbyår:
+Indtendit Webbyår:and Voady:
 https://www.bighairmama.se/
-
-and Voady:
+<br>
 https://bokning.voady.se/bighairmama/bighairmama/
 
 ## Features and Functionality
@@ -36,4 +35,29 @@ https://github.com/smirrebinx/project-final-project-api-backend.git
 
 ## View it live
 https://michelle-wegler-technigo-finalproject.netlify.app
-![final-project](https://github.com/smirrebinx/project-final-project-frontend/assets/48405465/5c531b90-85e9-43e3-adf8-a63ca4d973a0)
+
+## Front Page
+<img width="1886" height="703" alt="image" src="https://github.com/user-attachments/assets/d8d66591-b814-4c9d-b08f-23edeef05989" />
+
+## Book Treatments
+<img width="1910" height="907" alt="image" src="https://github.com/user-attachments/assets/d432405b-8afe-4881-a296-72227bd683a6" />
+<br>
+<img width="1912" height="910" alt="image" src="https://github.com/user-attachments/assets/1924addb-f36b-4711-88c7-23ad2f8855e7" />
+<br>
+<img width="1902" height="911" alt="image" src="https://github.com/user-attachments/assets/36dc8ee5-db83-4c68-a091-50475a0fccde" />
+
+## Log in/Register
+<img width="1895" height="909" alt="image" src="https://github.com/user-attachments/assets/bc79a1cd-57f2-4d54-b1ef-bcdd89199a99" />
+<br>
+<img width="1901" height="912" alt="image" src="https://github.com/user-attachments/assets/38862324-5f51-4264-93e0-bb2c228d1117" />
+
+## Book Treatment
+<img width="1903" height="908" alt="image" src="https://github.com/user-attachments/assets/c50f4ee8-759b-45d7-ad39-e33f948023d9" />
+<br>
+<img width="1897" height="908" alt="image" src="https://github.com/user-attachments/assets/c5e80de7-86e7-4056-bfac-2f457427ed55" />
+
+## User Information
+<img width="1911" height="915" alt="image" src="https://github.com/user-attachments/assets/4df3a03e-919e-41f1-baad-1146d61bba08" />
+
+## Coding Assistance
+Claude Code was used for assistance when refactoring the project from Create React App to Vite. 
