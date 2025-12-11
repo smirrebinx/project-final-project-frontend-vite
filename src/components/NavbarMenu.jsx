@@ -20,27 +20,27 @@ const NavbarMenu = ({ isMenuOpen, setIsMenuOpen }) => {
           <StyledNavbarLinkDiv>
             <ul>
               <StyledLi>
-                <StyledNavLink to="/" activeClassName="active" exact>
+                <StyledNavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>
                   Home
                 </StyledNavLink>
               </StyledLi>
               <StyledLi>
-                <StyledNavLink to="/login" activeClassName="active">
+                <StyledNavLink to="/login" className={({ isActive }) => isActive ? 'active' : ''}>
                   Login/Register
                 </StyledNavLink>
               </StyledLi>
               <StyledLi>
-                <StyledNavLink to="/userinfo" activeClassName="active">
+                <StyledNavLink to="/userinfo" className={({ isActive }) => isActive ? 'active' : ''}>
                   My Profile
                 </StyledNavLink>
               </StyledLi>
               <StyledLi>
-                <StyledNavLink to="/treatment" activeClassName="active">
+                <StyledNavLink to="/treatment" className={({ isActive }) => isActive ? 'active' : ''}>
                   Treatments
                 </StyledNavLink>
               </StyledLi>
               <StyledLi>
-                <StyledNavLink to="/booktreatment" activeClassName="active">
+                <StyledNavLink to="/booktreatment" className={({ isActive }) => isActive ? 'active' : ''}>
                   Book Treatment
                 </StyledNavLink>
               </StyledLi>

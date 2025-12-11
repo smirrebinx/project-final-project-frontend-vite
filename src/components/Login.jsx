@@ -107,7 +107,7 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ firstName, lastName, email: registerEmail, mobilePhone, password: registerPassword })
+        body: JSON.stringify({ firstName, lastName, email: registerEmail, mobilePhone: Number(mobilePhone), password: registerPassword })
       }
 
       const url = API_URL('register')

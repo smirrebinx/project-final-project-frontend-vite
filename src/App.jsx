@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Main from './components/Main'
+import NotFound from './components/NotFound'
 import { Provider, useSelector } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import thunkMiddleware from 'redux-thunk'
 import user from './reducers/user'
 import treatments from './reducers/treatments'
 
@@ -23,8 +23,7 @@ if (persistedStateJSON) {
 // Configure the Redux store
 const store = configureStore({
   reducer: rootReducer,
-  preloadedState: persistedState,
-  middleware: [thunkMiddleware]
+  preloadedState: persistedState
 })
 
 // Component that wraps the Main component and handles user access token changes
@@ -40,20 +39,13 @@ const MainWithUserInfo = () => {
 }
 
 export const App = () => {
-  console.log('App component is rendering'); // Debugging log
   return (
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<MainWithUserInfo />} /> {/* Default route */}
-          <Route path="*" element={<NotFound />} />         {/* 404 route */}
+          <Route path="/*" element={<MainWithUserInfo />} /> {/* Default route */}
         </Routes>
       </BrowserRouter>
     </Provider>
   )
 }
-
-// export const App = () => {
-//     console.log('App component is rendering'); // Debugging log
-//     return <h1>App is rendering correctly!</h1>;
-// };
