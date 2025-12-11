@@ -5,8 +5,7 @@ import Header from './Header'
 import useSticky from './useSticky'
 import { GoToTreatmentButton, StickyNav, StyledLinkWrapper } from './NavbarStyling'
 import { CardReview } from './GlobalStyling'
-import Footer from './Footer'
-import { ContentContainer, PageContainer } from './FooterStyling'
+import { ContentContainer } from './FooterStyling'
 
 const WelcomePage = () => {
   // Hook to track sticky behavior of navigation
@@ -75,17 +74,14 @@ const WelcomePage = () => {
           </Link>
         </StyledLinkWrapper>
       </StickyNav>
-      <PageContainer>
-        <ContentContainer>
-          <Header />
-          {userReviews.map((review, index) => (
-            <CardReview key={index} style={{ display: currentReviewIndex === index ? 'block' : 'none' }}>
-              {review}
-            </CardReview>
-          ))}
-        </ContentContainer>
-      </PageContainer>
-      <Footer />
+      <ContentContainer>
+        <Header />
+        {userReviews.map((review, index) => (
+          <CardReview key={index} style={{ display: currentReviewIndex === index ? 'block' : 'none' }}>
+            {review}
+          </CardReview>
+        ))}
+      </ContentContainer>
     </>
   )
 }
