@@ -3,15 +3,30 @@ import styled from 'styled-components'
 export const CardContainer = styled.div`
   display: grid;
   grid-gap: 1rem;
-  margin: 4rem auto;
+  margin: 6rem auto 2rem;
   grid-template-columns: repeat(2, minmax(2rem, 1fr));
   width: 95%;
   min-height: 50vh;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(4, minmax(2rem, 1fr));
+    grid-gap: 1.5rem;
+    width: 90%;
+    margin: 7rem auto 2rem;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    grid-template-columns: repeat(4, minmax(2rem, 1fr));
+    grid-gap: 1.5rem;
+    width: 85%;
+    margin: 8rem auto 2rem;
+    min-height: 100vh;
+  }
+
+  @media (min-width: 1281px) {
     grid-template-columns: repeat(4, minmax(2rem, 1fr));
     width: 60%;
-    margin: 6rem auto;
+    margin: 8rem auto 2rem;
     min-height: 100vh;
   }
 `
@@ -36,7 +51,13 @@ export const Card = styled.div`
     transform: translateY(-0.125rem);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    width: 10.625rem;
+    height: 6.875rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1281px) {
     width: 10.625rem;
     height: 6.875rem;
     margin: 0 2rem;
@@ -90,11 +111,28 @@ export const StyledParagraphBookingCards = styled.p`
   text-align: center;
   font-size: 1.3rem;
   font-family: var(--paragraph-font-family-two);
-  margin: 2rem;
+  margin: 1rem 2rem;
 
   @media (min-width: 1024px) {
-    margin-top: 0;
+    margin: 0.5rem 2rem;
     font-size: 1.2rem;
+  }
+`
+
+export const ConfirmationWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 6rem auto -3rem;
+  padding: 1rem;
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    margin: 7rem auto -3.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    margin: 8rem auto -4rem;
   }
 `
 
