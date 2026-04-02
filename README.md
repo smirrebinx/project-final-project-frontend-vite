@@ -24,7 +24,7 @@ Tech stack: MongoDB, Mongoose, Express, MongoDB Compass, MongoDB Atlas, Google C
 To set up and run the project, follow these steps:
 
 Clone the repository to your local machine.
-Install the necessary dependencies by running npm install in the project directory.
+Install the necessary dependencies by running npm ci in the project directory.
 Configure the backend API by providing the required environment variables, such as the database connection details and API keys.
 Start the backend server by running npm run dev in the backend directory.
 Launch the frontend application by running npm start in the frontend directory.
