@@ -24,14 +24,12 @@ export default [
         process: true
       },
       parserOptions: {
-        parser: '@babel/eslint-parser',
         ecmaVersion: 2021,
         sourceType: 'module',
         ecmaFeatures: {
           jsx: true,
           modules: true
-        },
-        requireConfigFile: false
+        }
       }
     },
     plugins: {
