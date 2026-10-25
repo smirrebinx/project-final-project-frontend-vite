@@ -54,8 +54,9 @@ export default [
       ...jsxA11y.flatConfigs.recommended.rules,
       ...styledA11y.configs.recommended.rules,
       ...standardRules, // Rules copied from eslint-config-standard, see eslint-standard-rules.js
-      'react/jsx-uses-react': 'warn',
-      'react/react-in-jsx-scope': 'warn',
+      'react/jsx-uses-react': 'off',
+      'react/react-in-jsx-scope': 'off',
+      'react/jsx-uses-vars': 'error',
       'no-unused-vars': 'warn',
       'react/function-component-definition': [
         'error',
