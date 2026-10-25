@@ -11,6 +11,11 @@ export const PageContainer = styled.div`
   padding-bottom: 5rem;
 `
 
+export const StyledMain = styled.main`
+  display: flex;
+  flex-direction: column;
+`
+
 export const ContentContainer = styled.div`
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */

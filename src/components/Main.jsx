@@ -11,7 +11,7 @@ import Logout from './Logout'
 import LogOutIcon from '../assets/account_circle_FILL0_wght100_GRAD0_opsz48.svg'
 import NotFound from './NotFound'
 import Footer from './Footer'
-import { PageContainer } from './FooterStyling'
+import { PageContainer, StyledMain } from './FooterStyling'
 import { ProfileIconButton } from './GlobalStyling'
 
 const Main = () => {
@@ -45,16 +45,18 @@ const Main = () => {
       <ProfileIconButton type="button" onClick={handleShowLogout} aria-label="Log out" title="Log out">
         <img src={LogOutIcon} alt="" />
       </ProfileIconButton>
-      <Routes>
-        {/* Define routes for different pages */}
-        <Route path="/" element={<WelcomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/booktreatment" element={<Booking onDateChange={handleDateChange} />} />
-        <Route path="/treatment" element={<Cards />} />
-        <Route path="/userinfo" element={<UserInfo pickedDate={bookedTreatmentDate || pickedDate} />} />
-        {/* Catch-all route for NotFound */}
-        <Route path="*" element={<NotFound loader />} />
-      </Routes>
+      <StyledMain>
+        <Routes>
+          {/* Define routes for different pages */}
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/booktreatment" element={<Booking onDateChange={handleDateChange} />} />
+          <Route path="/treatment" element={<Cards />} />
+          <Route path="/userinfo" element={<UserInfo pickedDate={bookedTreatmentDate || pickedDate} />} />
+          {/* Catch-all route for NotFound */}
+          <Route path="*" element={<NotFound loader />} />
+        </Routes>
+      </StyledMain>
       {/* Display logout component if showLogout state is true */}
       {showLogout && <Logout handleCloseLogout={handleCloseLogout} handleLogout={handleLogout} />}
       <Footer />
