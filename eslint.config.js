@@ -2,13 +2,17 @@ import globals from 'globals'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
-import standard from 'eslint-config-standard'
+import standardRules from './eslint-standard-rules.js'
 import importPlugin from 'eslint-plugin-import'
 import nPlugin from 'eslint-plugin-n'
 import promisePlugin from 'eslint-plugin-promise'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
+import styledA11y from 'eslint-plugin-styled-components-a11y'
 
 export default [
+  {
+    ignores: ['dist/**']
+  },
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
@@ -37,18 +41,19 @@ export default [
       import: importPlugin,
       n: nPlugin,
       promise: promisePlugin,
-      jsxA11y
+      'jsx-a11y': jsxA11y,
+      'styled-components-a11y': styledA11y
     },
     settings: {
       react: {
         version: 'detect' // Automatically detect the version of React that is being used
       }
     },
-     extends: [
-    'plugin:styled-components-a11y/recommended'
-    ],
     rules: {
-      ...standard.rules, // Directly include the rules from eslint-config-standard
+      // plugin:styled-components-a11y/recommended (which extends plugin:jsx-a11y/recommended)
+      ...jsxA11y.flatConfigs.recommended.rules,
+      ...styledA11y.configs.recommended.rules,
+      ...standardRules, // Rules copied from eslint-config-standard, see eslint-standard-rules.js
       'react/jsx-uses-react': 'warn',
       'react/react-in-jsx-scope': 'warn',
       'no-unused-vars': 'warn',
