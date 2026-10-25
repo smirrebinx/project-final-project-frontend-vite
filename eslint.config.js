@@ -57,7 +57,7 @@ export default [
       'react/jsx-uses-react': 'off',
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-vars': 'error',
-      'no-unused-vars': 'warn',
+      'no-unused-vars': 'error',
       'react/function-component-definition': [
         'error',
         {
