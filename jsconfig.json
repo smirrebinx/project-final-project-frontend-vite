@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
     "paths": {
-      "reducers/*": ["src/reducers/*"],
-      "*": ["src/*"], 
+      "reducers/*": ["./src/reducers/*"]
     },
     "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "jsx": "react-jsx"
   },
   "include": ["src/**/*"]
