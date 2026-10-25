@@ -38,7 +38,7 @@ export const FooterContainer = styled.div`
   left: 0;
 `
 
-export const StyledFooterHeaderTwo = styled.h3`
+export const StyledFooterHeaderTwo = styled.p`
   color: var(--footer-color-one);
   font-family: var(--headings-font-family-two);
   font-size: 1rem;
