@@ -1,6 +1,14 @@
+import { useEffect, useRef } from 'react'
 import { StyledCancelCloseButton, StyledLogOutButton } from './GlobalStyling'
 
 const Logout = ({ handleCloseLogout, handleLogout }) => {
+  const cancelRef = useRef(null)
+
+  // Move focus into the panel when it opens; focus() also brings it into view
+  useEffect(() => {
+    cancelRef.current.focus()
+  }, [])
+
   const handleLogoutClick = () => {
     handleLogout()
     handleCloseLogout()
@@ -28,6 +36,7 @@ const Logout = ({ handleCloseLogout, handleLogout }) => {
           onClick={handleLogoutClick}>Log out
         </StyledLogOutButton>
         <StyledCancelCloseButton
+          ref={cancelRef}
           type="button"
           onClick={handleCloseLogout}>Cancel
         </StyledCancelCloseButton>

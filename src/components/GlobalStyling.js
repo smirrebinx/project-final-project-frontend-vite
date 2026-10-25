@@ -39,6 +39,22 @@ left: 50%;
 transform: translateX(-50%);
 `
 
+export const ProfileIconButton = styled.button`
+position: absolute;
+top: 0;
+right: 0.5rem;
+z-index: 2;
+background: none;
+border: none;
+padding: 0;
+cursor: pointer;
+
+&:focus-visible {
+  outline: 0.2rem solid var(--submit-button-color-two);
+  outline-offset: 0.1rem;
+}
+`
+
 export const StyledLink = styled(Link)`
   text-decoration: none;
   width: 70%;
