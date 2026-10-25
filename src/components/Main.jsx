@@ -1,7 +1,6 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { animateScroll } from 'react-scroll'
 import user from '../reducers/user'
 import WelcomePage from './WelcomePage'
 import Login from './Login'
@@ -17,7 +16,6 @@ import { ProfileIconButton } from './GlobalStyling'
 
 const Main = () => {
   const dispatch = useDispatch()
-  const logoutRef = useRef(null)
   const [showLogout, setShowLogout] = useState(false)
 
   const [pickedDate, setPickedDate] = useState([])
@@ -33,8 +31,7 @@ const Main = () => {
     dispatch(user.actions.logout())
   }
 
-  const handleScrollToLogout = () => {
-    animateScroll.scrollTo(logoutRef.current.offsetTop)
+  const handleShowLogout = () => {
     setShowLogout(true)
   }
 
@@ -44,8 +41,8 @@ const Main = () => {
 
   return (
     <PageContainer>
-      {/* Display user icon with click event to scroll to logout */}
-      <ProfileIconButton type="button" onClick={handleScrollToLogout} aria-label="Log out" title="Log out">
+      {/* Display user icon with click event to show logout */}
+      <ProfileIconButton type="button" onClick={handleShowLogout} aria-label="Log out" title="Log out">
         <img src={LogOutIcon} alt="" />
       </ProfileIconButton>
       <Routes>
@@ -60,10 +57,6 @@ const Main = () => {
       </Routes>
       {/* Display logout component if showLogout state is true */}
       {showLogout && <Logout handleCloseLogout={handleCloseLogout} handleLogout={handleLogout} />}
-      {/* Hidden div to mark the position of logout component */}
-      <div ref={logoutRef} style={{ display: 'none' }}>
-          Log out
-      </div>
       <Footer />
     </PageContainer>
   )
