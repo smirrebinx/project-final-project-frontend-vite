@@ -11,6 +11,12 @@ export const PageContainer = styled.div`
   padding-bottom: 5rem;
 `
 
+export const StyledMain = styled.main`
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem; /* Space for the 3rem nav bar */
+`
+
 export const ContentContainer = styled.div`
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
@@ -32,7 +38,7 @@ export const FooterContainer = styled.div`
   left: 0;
 `
 
-export const StyledFooterHeaderTwo = styled.h3`
+export const StyledFooterHeaderTwo = styled.p`
   color: var(--footer-color-one);
   font-family: var(--headings-font-family-two);
   font-size: 1rem;
