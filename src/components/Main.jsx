@@ -13,6 +13,7 @@ import LogOutIcon from '../assets/account_circle_FILL0_wght100_GRAD0_opsz48.svg'
 import NotFound from './NotFound'
 import Footer from './Footer'
 import { PageContainer } from './FooterStyling'
+import { ProfileIconButton } from './GlobalStyling'
 
 const Main = () => {
   const dispatch = useDispatch()
@@ -44,12 +45,9 @@ const Main = () => {
   return (
     <PageContainer>
       {/* Display user icon with click event to scroll to logout */}
-      <button
-        type="button"
-        onClick={handleScrollToLogout}
-        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}>
-        <img src={LogOutIcon} alt="SVG Icon user avatar" title="Log Out" />
-      </button>
+      <ProfileIconButton type="button" onClick={handleScrollToLogout} aria-label="Log out" title="Log out">
+        <img src={LogOutIcon} alt="" />
+      </ProfileIconButton>
       <Routes>
         {/* Define routes for different pages */}
         <Route path="/" element={<WelcomePage />} />
